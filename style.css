@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", sans-serif;
+  background: #f8eaff;
+  overflow: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 25px;
+  background:
+    radial-gradient(circle at 15% 20%, #ffd9eb 0 45px, transparent 46px),
+    radial-gradient(circle at 85% 75%, #ddd1ff 0 55px, transparent 56px),
+    linear-gradient(135deg, #fff1f8, #eee5ff);
+}
+
+.envelope {
+  width: 145px;
+  height: 105px;
+  background: #ffb7d5;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(120, 70, 120, .18);
+  margin-bottom: 18px;
+  animation: float 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 72px solid transparent;
+  border-right: 72px solid transparent;
+  border-top: 55px solid #ff8fbd;
+}
+
+.heart {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 47px;
+  transform: translateX(-50%);
+  font-size: 35px;
+  color: white;
+}
+
+.tiny {
+  margin: 0 0 5px;
+  color: #a56b99;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0;
+  color: #59375f;
+  font-size: 35px;
+  line-height: 1.15;
+}
+
+#subtitle {
+  color: #80637f;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+button {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: #ff72ad;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(220, 80, 150, .25);
+  transition: .25s;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+#message {
+  margin-top: 15px;
+  color: #674665;
+  font-size: 18px;
+  line-height: 1.6;
+  animation: appear 1s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.spidey {
+  font-size: 42px;
+  margin: 12px;
+  animation: bounce 1.5s infinite;
+}
+
+.web {
+  position: absolute;
+  font-size: 65px;
+  opacity: .35;
+}
+
+.web1 {
+  top: 30px;
+  left: 20px;
+}
+
+.web2 {
+  bottom: 25px;
+  right: 20px;
+}
+
+.sticker {
+  position: absolute;
+  font-size: 28px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.sticker1 {
+  top: 20%;
+  right: 12%;
+}
+
+.sticker2 {
+  bottom: 18%;
+  left: 12%;
+}
+
+.sticker3 {
+  top: 12%;
+  right: 35%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 29px;
+  }
+
+  .envelope {
+    width: 130px;
+    height: 95px;
+  }
+}/* Make the page scrollable */
+html,
+body {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+.page {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+  padding-bottom: 60px;
+}/* ===== CUTE CLICKABLE CARDS ===== */
+
+.main-card {
+  width: min(92%, 600px);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 10px 0 40px;
+}
+
+.card {
+  width: 100%;
+  min-height: 125px;
+  padding: 22px 24px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid rgba(255, 170, 210, 0.45);
+
+  box-shadow: 0 10px 25px rgba(120, 80, 140, 0.12);
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 16px 32px rgba(120, 80, 140, 0.18);
+  background: white;
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.card h3 {
+  margin: 8px 0 5px;
+  color: #68436f;
+  font-size: 21px;
+}
+
+.card p {
+  margin: 0;
+  color: #8a7088;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Little decorative circle */
+.card::after {
+  content: "♡";
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 24px;
+  color: #f49ac2;
+}
+
+/* Different cute look for each card */
+
+.card:nth-child(1) {
+  background: linear-gradient(135deg, #fff5fa, #ffe3ef);
+}
+
+.card:nth-child(2) {
+  background: linear-gradient(135deg, #f8f3ff, #e9e0ff);
+}
+
+.card:nth-child(3) {
+  background: linear-gradient(135deg, #fff4f4, #ffe5e5);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .main-card {
+    width: 90%;
+  }
+
+  .card {
+    min-height: 115px;
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+  }
+}
